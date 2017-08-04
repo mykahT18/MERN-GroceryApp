@@ -21,7 +21,7 @@ class Form extends Component{
 					<h4>Add New Item</h4>
 					<label className="text-left">Item Name</label>
 	        <input type="text" ref={(input) => {this.inputValue = input}}placeholder="grocery Item"/>
-	        <button type="button" className="button expanded" id="custom-btn" onClick={(e) => this.addItem(e)}>Add</button>
+	        <button type="submit" className="button expanded" id="custom-btn" onClick={(e) => this.addItem(e)}>Add</button>
 				</form>
 			</section>
 		)

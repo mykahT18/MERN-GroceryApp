@@ -5,6 +5,7 @@ import '../foundation-6.4.1-complete/css/foundation.min.css'
 // Components
 import Header from '../components/Header'
 import Form from '../components/Form'
+import List from '../components/List'
 
 class App extends Component {
    constructor(props){
@@ -33,7 +34,9 @@ class App extends Component {
 				  <div className="small-6 cell">
 						<Form addItems={this.addItems.bind(this)}/>
 				  </div>
-				  <div className="small-6 cell">6 cells</div>
+				  <div className="small-6 cell">
+            <List />
+          </div>
 				</div>
       </div>
     );
