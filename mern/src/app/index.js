@@ -10,7 +10,7 @@ class App extends Component {
    constructor(props){
     super(props)
     this.state ={
-      items: []
+      items: ['milk','Cheese']
     }
   }
 
@@ -19,10 +19,13 @@ class App extends Component {
     const items = [...this.state.items]
     items.push(item)
     console.log("App-----------> Changing State---------> ", items)
-    
+    this.setState({
+      items
+    })
+    localStorage.setItem('items',items)
   }
 
-  render() {
+  render() { 
     return (
       <div className="App">
         <Header />
