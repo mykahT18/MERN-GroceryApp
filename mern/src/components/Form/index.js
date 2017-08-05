@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './form.css';
 
-
 class Form extends Component{
 	constructor(props) {
     super(props)

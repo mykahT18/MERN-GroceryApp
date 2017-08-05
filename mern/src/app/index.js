@@ -8,39 +8,38 @@ import Form from '../components/Form'
 import List from '../components/List'
 
 class App extends Component {
-   constructor(props){
+  constructor(props) {
     super(props)
-    this.state ={
-      items: ['milk','Cheese']
+    this.state = {
+      items: ['milk', 'Cheese'],
     }
   }
 
 
-  addItems(item){
-    const items = [...this.state.items]
-    items.push(item)
-    console.log("App-----------> Changing State---------> ", items)
+  addItems(item) {
+    const items = [...this.state.items, item]
+    // items.push(item)
+    console.log('App-----------> Changing State---------> ', items)
     this.setState({
-      items
+      items,
     })
-    localStorage.setItem('items',items)
+    localStorage.setItem('items', items)
   }
 
-  render() { 
+  render() {
     return (
       <div className="App">
         <Header />
         <div className="grid-x">
-				  <div className="small-6 cell">
-						<Form addItems={this.addItems.bind(this)}/>
-				  </div>
-				  <div className="small-6 cell">
-            <List />
+          <div className="small-6 cell">
+            <Form addItems={this.addItems} />
           </div>
-				</div>
+          <div className="small-6 cell">
+            <List items={localStorage.getItem('items')} />
+          </div>
+        </div>
       </div>
     );
   }
 }
-
 export default App;
