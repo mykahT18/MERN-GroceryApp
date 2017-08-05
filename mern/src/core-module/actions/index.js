@@ -5,20 +5,23 @@ export const showItems = () => {
 	}
 }
 // Add Items to list
-export const addItems = () => {
+export const addItems = (item) => {
 	return{
-		type: "ADD_ITEMS"
+		type: "ADD_ITEMS",
+		item
 	}
 }
 // Delete Items
-export const deleteItems = () => {
+export const deleteItems = (item) => {
 	return{
-		type: "DELETE_ITEMS"
+		type: "DELETE_ITEMS",
+		item
 	}
 }
 // Edit Items
-export const editItems = () => {
+export const editItems = (item) => {
 	return{
-		type: "EDIT_ITEMS"
+		type: "EDIT_ITEMS",
+		item
 	}
 }
