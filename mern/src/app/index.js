@@ -8,22 +8,16 @@ import Form from '../components/Form'
 import List from '../components/List'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      items: ['milk', 'Cheese'],
-    }
-  }
 
 
   addItems(item) {
-    const items = [...this.state.items, item]
+    // const items = [...this.state.items, item]
     // items.push(item)
-    console.log('App-----------> Changing State---------> ', items)
-    this.setState({
-      items,
-    })
-    localStorage.setItem('items', items)
+    // console.log('App-----------> Changing State---------> ', items)
+    // this.setState({
+      // items,
+    // })
+    // localStorage.setItem('items', items)
   }
 
   render() {
