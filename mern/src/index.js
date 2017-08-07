@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import './index.css'
 // import App from './app'
 import registerServiceWorker from './registerServiceWorker'
+import { loadState, saveState } from './loadStorage';
 
 
 // Redux
@@ -12,9 +13,14 @@ import { Provider } from 'react-redux'
 import rootReducer from './core-module/reducers'
 import TodoApp from './containers/TodoApp'
 
-// Create a object for default data for state
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
+const persistedState = loadState();
+// Create a object for default data for state
+const store = createStore(rootReducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+// saving state into storage
+store.subscribe(() => {
+	saveState(store.getState());
+})
 ReactDOM.render(
 	<Provider store={store}>
 		<TodoApp />
