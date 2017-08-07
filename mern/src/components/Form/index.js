@@ -3,15 +3,16 @@ import './form.css';
 
 class Form extends Component{
 	constructor(props) {
-    super(props)
-   	this.inputValue = ""
+		super(props)
+		this.inputValue = ""
   }
 	
 	addItem(e){
 		console.log("I am here!------------>")
 		e.preventDefault()
-		
-		this.props.addItems(this.inputValue.value)
+		let value = this.inputValue.value
+		console.log(value)
+		this.props.add(value)
 	}
 	render(){
 		return(
@@ -19,8 +20,8 @@ class Form extends Component{
 				<form action="">
 					<h4>Add New Item</h4>
 					<label className="text-left">Item Name</label>
-	        <input type="text" ref={(input) => {this.inputValue = input}}placeholder="grocery Item"/>
-	        <button type="submit" className="button expanded" id="custom-btn" onClick={(e) => this.addItem(e)}>Add</button>
+					<input type="text" ref={(input) => {this.inputValue = input}}placeholder="grocery Item"/>
+					<button type="submit" className="button expanded" id="custom-btn" onClick={(e) => this.addItem(e)}>Add</button>
 				</form>
 			</section>
 		)

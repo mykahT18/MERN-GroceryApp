@@ -6,6 +6,7 @@ export const showItems = () => {
 }
 // Add Items to list
 export const addItems = (item) => {
+	console.log("--- before ACTION -----")
 	return{
 		type: "ADD_ITEMS",
 		item
