@@ -6,7 +6,10 @@ class List extends Component{
 			<section>
 				<h1>My Grocery List</h1>
 				<ul>
+					{this.props.todos.todos.map((t, i)=>(
+						<li key={i}>{t.text}</li>
 					
+					))}
 				</ul>
 			</section>
 		)

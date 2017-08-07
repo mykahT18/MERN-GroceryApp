@@ -9,21 +9,20 @@ import List from '../components/List'
 
 
 const App = ({
+  todos,
   showItems,
   addItems,
   deleteItems,
   editItems
 }) => (
       <div className="App">
-     
-       
         <Header />
         <div className="grid-x">
           <div className="small-6 cell">
             <Form add={addItems} />
           </div>
           <div className="small-6 cell">
-            <List items={localStorage.getItem('items')} />
+            <List todos={todos} />
           </div>
         </div>
       </div>

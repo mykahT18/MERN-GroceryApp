@@ -18,6 +18,11 @@ const todoItems = (state = defaultState, action) => {
           }
         ]
       })
+    case "SHOW_ITEMS":
+      console.log("------> Show All Items")
+      return Object.assign({}, state, {
+        todos: state.todos
+      })
     default:
       return state
 	}
