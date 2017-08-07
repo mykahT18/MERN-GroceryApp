@@ -1,7 +1,5 @@
 const defaultState = {
-  todos: [{
-    text: 'Cheese'
-  }]
+  todos: []
 }
 
 const todoItems = (state = defaultState, action) => {
@@ -9,12 +7,12 @@ const todoItems = (state = defaultState, action) => {
 	switch(action.type){
 		case "ADD_ITEMS":
     // console.log("Todo Switch------->", ...state.todos)
-    console.log("Actions-------=> ", action )
+    console.log("Actions-------=> ", state )
 			return Object.assign({}, state, {
         todos: [
           ...state.todos,
           {
-            text: action.item
+            name: action.item
           }
         ]
       })
@@ -23,6 +21,19 @@ const todoItems = (state = defaultState, action) => {
       return Object.assign({}, state, {
         todos: state
       })
+    case "EDIT_ITEMS":
+      console.log("Editing Item ------> ")
+      return Object.assign({}, state, {
+        
+      })
+    case "DELETE_ITEMS":
+      console.log("Delete Item ------> ")
+      return Object.assign({}, state, {
+       todos: [
+          ...state.todos.slice(0, action.id),
+          ...state.todos.slice(action.id + 1)
+       ]
+    })
     default:
       return state
 	}

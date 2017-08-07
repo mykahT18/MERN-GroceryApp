@@ -13,16 +13,16 @@ export const addItems = (item) => {
 	}
 }
 // Delete Items
-export const deleteItems = (item) => {
+export const deleteItems = (id) => {
 	return{
 		type: "DELETE_ITEMS",
-		item
+		id
 	}
 }
 // Edit Items
-export const editItems = (item) => {
+export const editItems = (id) => {
 	return{
 		type: "EDIT_ITEMS",
-		item
+		id
 	}
 }
