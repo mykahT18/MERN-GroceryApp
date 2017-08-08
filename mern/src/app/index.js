@@ -13,7 +13,8 @@ const App = ({
   showItems,
   addItems,
   deleteItems,
-  editItems
+  editItems,
+  editingItem
 }) => (
       <div className="App">
         <Header />
@@ -22,7 +23,7 @@ const App = ({
             <Form add={addItems} />
           </div>
           <div className="small-6 cell">
-            <List todos={todos} deleteItems={deleteItems} />
+            <List todos={todos} deleteItems={deleteItems} editItems={editItems} editingItem={editingItem} />
           </div>
         </div>
       </div>

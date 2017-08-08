@@ -20,9 +20,18 @@ export const deleteItems = (id) => {
 	}
 }
 // Edit Items
-export const editItems = (id) => {
+export const editItems = (id, item) => {
 	return{
 		type: "EDIT_ITEMS",
-		id
+		id,
+		item
+	}
+}
+// switch to edit input
+export const editingItem = (id, isEditing) => {
+	return{
+		type: "SHOW_EDIT",
+		id,
+		isEditing
 	}
 }
