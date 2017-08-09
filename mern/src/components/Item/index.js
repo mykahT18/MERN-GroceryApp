@@ -4,6 +4,7 @@ class Item extends Component {
 	constructor(props){
 		super(props)
 		this.index;
+		this.item;
 	}
 	render(){
 		let items = this.props.todos.todos
@@ -11,8 +12,8 @@ class Item extends Component {
 		return(
 				<div>
 					<li>
-						<input type="text" placeholder={this.index}/>
-						<button className="button li-btn" onClick={ () => this.props.editingItem(false)}>Save</button>
+						<input type="text" placeholder={this.item} ref="editName"/>
+						<button className="button li-btn" onClick={ () => this.props.editItems(this.index, this.refs.editName.value,false)}>Save</button>
 						<button className="button li-btn" onClick={ () => this.props.deleteItems()}>Delete</button>
 					</li>
 				</div>
@@ -35,7 +36,8 @@ class Item extends Component {
 	}
 	onItemClick(item, i){
 		console.log(item, i)
-		this.index = item.name;
+		this.index = i;
+		this.item = item.name
 		this.props.editingItem(true)
 	}
 
