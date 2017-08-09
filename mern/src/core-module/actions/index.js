@@ -28,10 +28,9 @@ export const editItems = (id, item) => {
 	}
 }
 // switch to edit input
-export const editingItem = (id, isEditing) => {
+export const editingItem = (isEditing) => {
 	return{
 		type: "SHOW_EDIT",
-		id,
 		isEditing
 	}
 }

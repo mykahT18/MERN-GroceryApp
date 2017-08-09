@@ -30,7 +30,7 @@ const todoItems = (state = defaultState, action) => {
     
 
     case "SHOW_EDIT":
-      console.log("Switching to edit input", action.id, action.isEditing)
+      console.log("Switching to edit input")
       
       console.log("djfalskdfjlksjdflaksdjflkjdsflk------", state)
       return{...state, isEditing: action.isEditing}
