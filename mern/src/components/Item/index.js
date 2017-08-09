@@ -12,8 +12,8 @@ class Item extends Component {
 		return(
 				<div>
 					<li>
-						<input type="text" placeholder={this.item} ref="editName"/>
-						<button className="button li-btn" onClick={ () => this.props.editItems(this.index, this.refs.editName.value,false)}>Save</button>
+						<input type="text" placeholder={this.item} ref="editName" defaultValue={this.item}/>
+						<button className="button li-btn" onClick={ () => this.props.editItems(this.index, this.refs.editName.value, false)}>Save</button>
 						<button className="button li-btn" onClick={ () => this.props.deleteItems()}>Delete</button>
 					</li>
 				</div>
