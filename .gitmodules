@@ -1,3 +1,0 @@
-[submodule "mern/src/core-modules"]
-	path = mern/src/core-modules
-	url = https://github.com/mykahT18/redux
